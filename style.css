@@ -1,0 +1,117 @@
+body{
+    background-color: rgb(50, 50, 53);
+    margin: 0px;
+}
+.head{
+    background-color:  #1BA39C;
+    border-radius: 10px;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.left{
+    width: 220px;
+    border-right: 2px solid #fff;
+}
+hr{
+    width: 220px;
+    height: 1px;
+    background-color: #fff;
+}
+.title{
+    font-size: 30px;
+    padding-top: 10px;
+    color: #fff;
+    padding-left: 20px;
+}
+.weakdays{
+    padding-bottom: 20px;
+}
+.day_1,.day_2,.day_3,.day_4,.day_5,.day_6,.day_7 {
+    color:#fff;
+    margin-left: 20px;
+    font-size: 20px;
+    padding-left:5px;
+    margin-bottom: 10px;
+    width: 150px;
+    list-style-type: none;
+    border: 2px solid #fff;
+    height: 30px;
+    transition: all ease 0.5s;
+}
+.day_1.active , .day_2.active , .day_3.active , .day_4.active , .day_5.active , .day_6.active , .day_7.active {
+    background-color: #fff;
+    color:#1BA39C;
+    margin-left: 30px;
+}
+
+.container{
+    display: flex;
+}
+.todo_list{
+    margin-top: 20px;
+    margin-left: 20px
+}
+input[type=text] {
+    width: 94%;
+    padding: 10px; }
+.add {
+    margin-top: 10px;
+    width: 102%;
+    padding: 10px;
+    cursor: pointer; }
+.wrapper_1,.wrapper_2,.wrapper_3,.wrapper_4,.wrapper_5,.wrapper_6,.wrapper_7{
+    width: 30%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    transform: translateX(600px);
+    opacity: 0;
+    transition: all ease 0.5s;    
+}
+.wrapper_1{
+    position: absolute;
+    z-index: 2;
+    top: 220px;;;
+}
+.wrapper_2{
+    position: absolute;
+    z-index: 3;
+    top: 220px;;;
+}
+.wrapper_3{
+    position: absolute;
+    z-index: 4;
+    top: 220px;;;
+}
+.wrapper_4{
+    position: absolute;
+    z-index: 5;
+    top: 220px;;;
+}
+.wrapper_5{
+    position: absolute;
+    z-index: 6;
+    top: 220px;;;
+}
+.wrapper_6{
+    position: absolute;
+    z-index: 7;
+    top: 220px;;;
+}
+.wrapper_7{
+    position: absolute;
+    z-index: 8;
+    top: 220px;;;
+}
+.wrapper_1.active,.wrapper_2.active,.wrapper_3.active,.wrapper_4.active,.wrapper_5.active,.wrapper_6.active,.wrapper_7.active{
+    transform: translateX(20px);
+    opacity: 100;
+}
+.todo_item p{
+    font-size: 15px;
+}
+
+
+
+
