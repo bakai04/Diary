@@ -126,7 +126,7 @@ input[type=text] {
     transform: translateX(20px);
     opacity: 100;
 }
-.todo_item p{
+.txt2{
     font-size: 15px;
     color: #fff;
     margin-left: 10px;

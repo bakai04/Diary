@@ -2,13 +2,13 @@ let weakdays=document.querySelector(".weakdays");
 let message=document.querySelector(".message");
 let btn=document.querySelector(".add");
 let todoitem=document.querySelector(".todo_item")
-let displaywrap=[[{ title:"Совершенствоваться",checked: false}],[{title:"Совершенствоваться",checked: false}],
-[{title:"Совершенствоваться",checked: false}],[{title:"Совершенствоваться",checked: false}],[{title:"Совершенствоваться",checked: false}],
-[{title:"Совершенствоваться",checked: false}],[{title:"Совершенствоваться",checked: false}]];
+let displaywrap=[[],[],
+[],[],[],
+[],[]];
 let days=[];
 let wrapper=[];
 let active="day_1";
-
+let txt2=document.querySelector('.txt2');
 
 
 for(let i=0; i<=6; i++){
@@ -29,11 +29,6 @@ weakdays.addEventListener("click", function(event){
     active=event.target.getAttribute("class");
     days[+active[4]-1].classList.toggle("active");
     wrapper[+active[4]-1].classList.toggle("active");
-    if(localStorage.getItem(active)){
-        displaywrap[+active[4]-1]=JSON.parse(localStorage.getItem(active));
-        displaymessages();
-    }    
-    displaymessages() 
 })
 
 
@@ -77,10 +72,15 @@ todoitem.addEventListener("click",function(event){
                 localStorage.setItem(active,JSON.stringify(displaywrap[+active[4]-1]));
             }
         }) 
+    }else if(idinput[7]=="0"){
+        wrapper[+active[4]-1].innerHTML=`
+        <p class="txt2">Планируйте свой день</p>
+        `;
     }else{
-        displaywrap[+active[4]-1].splice(+idinput[7],1)
+        displaywrap[+active[4]-1].splice(+idinput[7],1);
         localStorage.setItem(active,JSON.stringify(displaywrap[+active[4]-1]));
         displaymessages()
+        console.log(displaywrap[+active[4]-1])
         }
     
 })
