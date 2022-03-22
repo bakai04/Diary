@@ -2,9 +2,7 @@ let weakdays=document.querySelector(".weakdays");
 let message=document.querySelector(".message");
 let btn=document.querySelector(".add");
 let todoitem=document.querySelector(".todo_item")
-let displaywrap=[[],[],
-[],[],[],
-[],[]];
+let displaywrap=[[],[],[],[],[],[],[]];
 let days=[];
 let wrapper=[];
 let active="day_1";
@@ -29,12 +27,19 @@ weakdays.addEventListener("click", function(event){
     active=event.target.getAttribute("class");
     days[+active[4]-1].classList.toggle("active");
     wrapper[+active[4]-1].classList.toggle("active");
+    if(localStorage.getItem(active)){
+        displaywrap[+active[4]-1]=JSON.parse(localStorage.getItem(active));
+    }    
+    displaymessages() 
 })
 
 
 
 
 btn.addEventListener("click",function(){
+    if(message.value===""){
+        return
+    }
     let newtodo={
         title:message.value,
         checked: false
@@ -62,25 +67,34 @@ function displaymessages(){
 }
  
 
-
+let idinput="";
 todoitem.addEventListener("click",function(event){
-    let idinput= event.target.getAttribute("class");
-    if(idinput[0]==="c"){
-        displaywrap[+active[4]-1].forEach(function(item,i){
-            if(idinput[6]==active[4]-1 && i==idinput[7]){
-                item.checked= !item.checked;
-                localStorage.setItem(active,JSON.stringify(displaywrap[+active[4]-1]));
-            }
-        }) 
-    }else if(idinput[7]=="0"){
-        wrapper[+active[4]-1].innerHTML=`
-        <p class="txt2">Планируйте свой день</p>
-        `;
-    }else{
-        displaywrap[+active[4]-1].splice(+idinput[7],1);
-        localStorage.setItem(active,JSON.stringify(displaywrap[+active[4]-1]));
-        displaymessages()
-        console.log(displaywrap[+active[4]-1])
-        }
-    
+    idinput= event.target.getAttribute("class");
+    if(idinput[0]==='c'){
+        check()
+    }else if(idinput[0]==='r'){
+        deleters();
+    }
 })
+
+function deleters(){
+if(idinput[7]=="0" && displaywrap[+active[4]-1].length==1){
+    wrapper[+active[4]-1].innerHTML=`
+    <p class="txt2">Планируйте свой день</p>
+    `;
+}else{
+    displaywrap[+active[4]-1].splice(+idinput[7],1);
+    localStorage.setItem(active,JSON.stringify(displaywrap[+active[4]-1]));
+    displaymessages()
+    console.log(displaywrap[+active[4]-1])
+    }
+}
+
+function check(){
+    displaywrap[+active[4]-1].forEach(function(item,i){
+        if(idinput[6]==active[4]-1 && i==idinput[7]){
+            item.checked= !item.checked;
+            localStorage.setItem(active,JSON.stringify(displaywrap[+active[4]-1]));
+        }
+    })
+}
