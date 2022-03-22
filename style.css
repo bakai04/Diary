@@ -5,7 +5,7 @@ body{
 .head{
     background-color:  rgb(50, 50, 53);
     border-radius: 10px;
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     margin-top: 50px;
 }
@@ -54,22 +54,26 @@ hr{
     margin-left: 20px
 }
 input[type=text] {
-    width: 94%;
+    width: 260px;
     padding: 10px; }
 .add {
     background-color: rgb(50, 50, 53);
     border: 2px solid white;
     color: white;
     margin-top: 10px;
-    width: 102%;
+    width: 284px;
     padding: 10px;
     cursor: pointer; }
 .add:hover{
     background-color: #fff;
     color:rgb(50, 50, 53);
 }
+.create_new_todo{
+    display: flex;
+    flex-direction: column;
+}
 .wrapper_1,.wrapper_2,.wrapper_3,.wrapper_4,.wrapper_5,.wrapper_6,.wrapper_7{
-    width: 30%;
+    width: 282px;
     border: 2px solid white;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -124,8 +128,35 @@ input[type=text] {
 }
 .todo_item p{
     font-size: 15px;
+    color: #fff;
+    margin-left: 10px;
+}
+.line{
+    width: 270px;
+    height: 1px;
+    background-color: #fff;
+}
+input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+.todo_item button{
+    background-color: red;
+    color: #fff;
+    border: 2px solid #fff;
+    transform: translateY(-5px);
+    margin-left: 15px;
 }
 
-
-
-
+@media(max-width: 1024px){
+    .head{
+        width: 90%;
+    }
+}
+@media(max-width: 769px){
+    .left{
+        width: 40%;
+        border-right: 2px solid #fff;
+    }
+}
