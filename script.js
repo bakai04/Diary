@@ -79,6 +79,8 @@ todoitem.addEventListener("click",function(event){
 
 function deleters(){
 if(idinput[7]=="0" && displaywrap[+active[4]-1].length==1){
+    displaywrap[+active[4]-1].splice(+idinput[7],1);
+    localStorage.setItem(active,JSON.stringify(displaywrap[+active[4]-1]));
     wrapper[+active[4]-1].innerHTML=`
     <p class="txt2">Планируйте свой день</p>
     `;
