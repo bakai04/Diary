@@ -1,9 +1,9 @@
 body{
-    background-color: rgb(50, 50, 53);
+    background-color: rgb(30, 30, 36);
     margin: 0px;
 }
 .head{
-    background-color:  #1BA39C;
+    background-color:  rgb(50, 50, 53);
     border-radius: 10px;
     width: 60%;
     margin: 0 auto;
@@ -34,6 +34,7 @@ hr{
     padding-left:5px;
     margin-bottom: 10px;
     width: 150px;
+    background-color: rgb(50, 50, 53);
     list-style-type: none;
     border: 2px solid #fff;
     height: 30px;
@@ -41,7 +42,7 @@ hr{
 }
 .day_1.active , .day_2.active , .day_3.active , .day_4.active , .day_5.active , .day_6.active , .day_7.active {
     background-color: #fff;
-    color:#1BA39C;
+    color: rgb(50, 50, 53);
     margin-left: 30px;
 }
 
@@ -56,18 +57,31 @@ input[type=text] {
     width: 94%;
     padding: 10px; }
 .add {
+    background-color: rgb(50, 50, 53);
+    border: 2px solid white;
+    color: white;
     margin-top: 10px;
     width: 102%;
     padding: 10px;
     cursor: pointer; }
+.add:hover{
+    background-color: #fff;
+    color:rgb(50, 50, 53);
+}
 .wrapper_1,.wrapper_2,.wrapper_3,.wrapper_4,.wrapper_5,.wrapper_6,.wrapper_7{
     width: 30%;
+    border: 2px solid white;
     border-radius: 5px;
     margin-bottom: 10px;
-    background-color: #fff;
+    background-color: rgb(50, 50, 53);
     transform: translateX(600px);
     opacity: 0;
-    transition: all ease 0.5s;    
+    transition: all ease 0.5s;   
+    align-items: center;
+}
+.txt{
+    color: #fff;
+    margin-left: 10px;
 }
 .wrapper_1{
     position: absolute;
