@@ -7,16 +7,13 @@ let days=[];
 let wrapper=[];
 let active="day_1";
 let txt2=document.querySelector('.txt2');
-
+let head=document.querySelector(".head")
 
 for(let i=0; i<=6; i++){
     wrapper[i]=document.querySelector(".wrapper_"+(i+1));
     days[i]=document.querySelector(".day_"+(i+1));
 }
 
-
-days[+active[4]-1].classList.toggle("active");
-wrapper[+active[4]-1].classList.toggle("active");
 
 
 weakdays.addEventListener("click", function(event){
@@ -96,6 +93,14 @@ function check(){
     displaywrap[+active[4]-1].forEach(function(item,i){
         if(idinput[6]==active[4]-1 && i==idinput[7]){
             item.checked= !item.checked;
+            if(item.checked==true){    
+                displaywrap[+active[4]-1].push(displaywrap[+active[4]-1][i]);
+                displaywrap[+active[4]-1].splice(i,1);
+            }else{
+                displaywrap[+active[4]-1].unshift(displaywrap[+active[4]-1][i]);
+                displaywrap[+active[4]-1].splice(i+1,1);
+            }
+            displaymessages()
             localStorage.setItem(active,JSON.stringify(displaywrap[+active[4]-1]));
         }
     })
