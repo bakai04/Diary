@@ -41,7 +41,7 @@ btn.addEventListener("click",function(){
         title:message.value,
         checked: false
     }
-    displaywrap[+active[4]-1].push(newtodo);
+    displaywrap[+active[4]-1].unshift(newtodo);
     displaymessages()
     localStorage.setItem(active,JSON.stringify(displaywrap[+active[4]-1]))
 })
